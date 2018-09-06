@@ -13,26 +13,26 @@ def foo():
     print ("hello")
     bashCommand = """
     if git clone https://github.com/influxdata/chronof.git ; then
-        echo "Command succeeded"
+        echo "succeeded"
     else
-        echo "Command failed"
+        echo "failed"
     fi
     """
     os.system(bashCommand)
-    # os.chdir("./git/http-server")
-    # subprocess.call(["git", "pull", "origin", "master"])
-    # os.chdir("../../") 
+    os.chdir("git/http-server")
+    subprocess.call(["git", "pull", "origin", "master"])
+    os.chdir("../../") 
     image = Image.open('msg.jpg')
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype('Roboto-Bold.ttf', size=13)
     (x, y) = (50, 5)
-    name = 'Build: Success'
+    name = "Build: Succeed"
     color = '#b85c00'
     draw.text((x, y), name, fill=color, font=font)
-    # os.chdir("/var/www")
+    os.chdir("/var/www")
     image.save('msg1.png')
     return "OK"
   return "NOT OK"
 
 if __name__ == '__main__':
-   app.run(host="localhost", port=8888)
+   app.run(host="207.154.246.33", port=8888)
