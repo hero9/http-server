@@ -2,7 +2,7 @@
 # http-server
 python 2.7
 # continuos integration
-ready!
+fully ready!
 
 # nginx_config
 ```
